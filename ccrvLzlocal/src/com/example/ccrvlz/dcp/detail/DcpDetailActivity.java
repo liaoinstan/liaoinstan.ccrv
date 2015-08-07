@@ -22,6 +22,7 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.example.ccrvlz.R;
 import com.example.ccrvlz.order.OrderActivity;
 import com.example.pojo.OrderAll;
+import com.example.pojo.OrderCoupon;
 import com.example.pojo.OrderPak;
 import com.example.pojo.TestPojo;
 import com.example.slideshowdemo.customview.SlideShowView;
@@ -54,24 +55,6 @@ public class DcpDetailActivity extends FragmentActivity implements OnClickListen
 	}
 	
 	private void init(){
-		///////////初始化翻页pager控件
-		PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.detail_tabs);
-		//自定义tabs样式
-		tabs.setShouldExpand(true);//自适应宽度
-		tabs.setIndicatorColorResource(R.color.cc_orage);
-		tabs.setUnderlineHeight(2);
-		tabs.setIndicatorHeight(4);
-		tabs.setDividerColorResource(R.color.none);
-		tabs.setUnderlineColorResource(R.color.cc_underlinelight);
-		tabs.setTextSize(14);
-		tabs.setTextColorHotResource(R.color.cc_orage);
-		//
-		ViewPager pager = (ViewPager) findViewById(R.id.detail_pager);
-		pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-		pager.setAdapter(pagerAdapter);
-		tabs.setViewPager(pager);
-		
-		
 		///////////初始化翻页HListView控件
 		list = (AutoHListView) findViewById(R.id.list_dcp_detail_pak);
 		adapter = new AdapterForDcpDetailList(this, null);
@@ -89,6 +72,25 @@ public class DcpDetailActivity extends FragmentActivity implements OnClickListen
 		((TextView)findViewById(R.id.text_dcp_detail_price)).setText(testPojo.getPrice());
 		((TextView)findViewById(R.id.text_dcp_detail_oldprice)).setText(testPojo.getPrice2());
 		((ImageView)findViewById(R.id.img_dcp_detail_like)).setImageResource("1".equals(testPojo.getLike())?R.drawable.icon_dcp_like:R.drawable.icon_dcp_like2);
+	}
+	
+	private void initCtrl(String[] titles,ArrayList<String> datas){
+		///////////初始化翻页pager控件
+		PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.detail_tabs);
+		//自定义tabs样式
+		tabs.setShouldExpand(true);//自适应宽度
+		tabs.setIndicatorColorResource(R.color.cc_orage);
+		tabs.setUnderlineHeight(2);
+		tabs.setIndicatorHeight(4);
+		tabs.setDividerColorResource(R.color.none);
+		tabs.setUnderlineColorResource(R.color.cc_underlinelight);
+		tabs.setTextSize(14);
+		tabs.setTextColorHotResource(R.color.cc_orage);
+		//
+		ViewPager pager = (ViewPager) findViewById(R.id.detail_pager);
+		pagerAdapter = new MyPagerAdapter(getSupportFragmentManager(),titles,datas);
+		pager.setAdapter(pagerAdapter);
+		tabs.setViewPager(pager);
 	}
 	
 	/**
@@ -110,7 +112,7 @@ public class DcpDetailActivity extends FragmentActivity implements OnClickListen
 				adapter.notifyDataSetChanged();
 				list.autoHeight(true);
 				//加载cardpage html页面
-				String html = "<div>"
+				final String html = "<div>"
 								+"this is a html page<br>"
 								+"this is a html page<br>"
 								+"this is a html page<br>"
@@ -121,22 +123,18 @@ public class DcpDetailActivity extends FragmentActivity implements OnClickListen
 								+"this is a html page<br>"
 								+"<img src='http://pica.nipic.com/2007-11-13/2007111317599808_2.jpg' style='width:137px; height:90px;'>"
 								+"<div>";
-				pagerAdapter.getResults().set(0, html);
-				pagerAdapter.getResults().set(1, html);
-				pagerAdapter.getResults().set(2, html);
-				pagerAdapter.notifyDataSetChanged();
+				initCtrl(new String[]{"商品详情", "行程概览", "房车介绍"},new ArrayList<String>(){{add(html);add(html);add(html);}});
 			}
 		}, 500);
 	}
 	
 	public class MyPagerAdapter extends FragmentPagerAdapter {
-		private final String[] TITLES = { "商品详情", "行程概览", "房车介绍" };
-		private List<String> results = new ArrayList<String>(){{add("");add("");add("");}};
-		public List<String> getResults() {
-			return results;
-		}
-		public MyPagerAdapter(FragmentManager fm) {
+		private String[] TITLES;// = { "商品详情", "行程概览", "房车介绍" };
+		private List<String> results;// = new ArrayList<String>(){{add("");add("");add("");}};
+		public MyPagerAdapter(FragmentManager fm,String[] titles,List<String> results) {
 			super(fm);
+			this.TITLES = titles;
+			this.results = results;
 		}
 
 		@Override
@@ -151,20 +149,15 @@ public class DcpDetailActivity extends FragmentActivity implements OnClickListen
 
 		@Override
 		public Fragment getItem(int position) {
-			return DetailCardFragment.newInstance(position);
+			return DetailCardFragment.newInstance(position,results.get(position));
 		}
 		
-		@Override
-		public Object instantiateItem(ViewGroup container, int position) {
-			DetailCardFragment frag = (DetailCardFragment)super.instantiateItem(container, position);
-			frag.setData(results.get(position));
-			return frag;
-		}
-		
-		@Override
-		public int getItemPosition(Object object) {
-			return POSITION_NONE;
-		}
+//		@Override
+//		public Object instantiateItem(ViewGroup container, int position) {
+//			DetailCardFragment frag = (DetailCardFragment)super.instantiateItem(container, position);
+//			frag.setData(results.get(position));
+//			return frag;
+//		}
 	}
 	
 	private void setListener() {

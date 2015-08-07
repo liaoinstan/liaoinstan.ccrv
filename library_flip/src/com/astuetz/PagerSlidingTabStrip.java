@@ -75,7 +75,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	private Paint rectPaint;
 	private Paint dividerPaint;
 
-	private int indicatorColor = 0xFF3F9FE0;
+	private int indicatorColor = 0xFF3F9FE0;	//指示器颜色
 	private int underlineColor = 0xFFFFFFFF;	//底线颜色
 	private int dividerColor = 0x1A000000;		//分界线颜色
 
@@ -90,8 +90,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 	private int dividerWidth = 1;		//分界线宽
 
 	private int tabTextSize = 12;
-	private int tabTextColor = 0xFF666666;
-	private int tabTextColorHot = 0xFF666666;
+	private int tabTextColor = 0xFF666666;	//文字颜色
+	private int tabTextColorHot = 0xFF666666;	//选择标签文字颜色
 	private Typeface tabTypeface = null;
 	private int tabTypefaceStyle = Typeface.BOLD;
 

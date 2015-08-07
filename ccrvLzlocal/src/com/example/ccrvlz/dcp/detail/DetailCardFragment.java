@@ -26,18 +26,15 @@ import android.webkit.WebView;
 import com.example.ccrvlz.R;
 
 public class DetailCardFragment extends Fragment {
-
-	private static final String ARG_POSITION = "position";
+	private View rootView = null;//缓存Fragment view
 	private int position;
 	private String data;
-	public void setData(String data) {
-		this.data = data;
-	}
 
-	public static DetailCardFragment newInstance(int position) {
+	public static DetailCardFragment newInstance(int position,String data) {
 		DetailCardFragment f = new DetailCardFragment();
 		Bundle b = new Bundle();
-		b.putInt(ARG_POSITION, position);
+		b.putInt("position", position);
+		b.putString("data", data);
 		f.setArguments(b);
 		return f;
 	}
@@ -46,16 +43,24 @@ public class DetailCardFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		position = getArguments().getInt(ARG_POSITION);
+		position = getArguments().getInt("position");
+		data = getArguments().getString("data");
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.dcp_detail_card_layout,container,false);
-		//////////////初始化rootView
-		WebView webView = (WebView)view.findViewById(R.id.web_dcp_detail_card);
-		//String html = "<html><body><font>html5 test<br>html5 test<br>html5 test<br>html5 test<br></font></body></html>";
-		webView.loadData(data, "text/html", "UTF-8");
-		return view;
+		if(null != rootView){
+			ViewGroup parent = (ViewGroup) rootView.getParent();
+			if(null != parent){
+				parent.removeView(rootView);
+			}
+		}else{
+			rootView = inflater.inflate(R.layout.dcp_detail_card_layout,container,false);
+			//////////////初始化rootView
+			WebView webView = (WebView)rootView.findViewById(R.id.web_dcp_detail_card);
+			//String html = "<html><body><font>html5 test<br>html5 test<br>html5 test<br>html5 test<br></font></body></html>";
+			webView.loadData(data, "text/html", "UTF-8");
+		}
+		return rootView;
 	}
 }
