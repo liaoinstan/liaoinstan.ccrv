@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddSerActivity"
+    android:background="#EEEEEE" >
+    
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bk_head" >
+
+        <ImageView
+            android:id="@+id/img_action_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:padding="5dp"
+            android:src="@drawable/hot_icon_back" />
+
+        <TextView
+            android:id="@+id/text_head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="0.5"
+            android:text="选择增值服务"
+            android:textSize="18dp"
+            android:textColor="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/img_action_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/icon_action_more" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/RelativeLayout1"
+        android:layout_height="40dp"
+        android:background="#FFFFFF" >
+
+        <ImageView
+            android:id="@+id/img_coupon_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_dcp_time" />
+
+        <TextView
+            android:id="@+id/text_addser_starttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_coupon_check"
+            android:text="2015年8月12号"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/text_addser_startcity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/text_addser_starttime"
+            android:text="成都"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/text_coupon_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/text_addser_startcity"
+            android:text="出发"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+		ptr:ptrAnimationStyle="flip"
+       	ptr:ptrMode="both"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/RelativeLayout2"
+        android:scrollbarThumbVertical="@drawable/scroll2" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.example.ccrvlz.dcp.detail.AutoHListView
+                android:id="@+id/list_addser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:listSelector="@android:color/transparent" >
+            </com.example.ccrvlz.dcp.detail.AutoHListView>
+
+            <RelativeLayout
+                android:id="@+id/act_next"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/hot_lay_act_next" >
+
+                <TextView
+                    android:id="@+id/text_coupon_starttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="确定" 
+                    android:textColor="#FFFFFF"
+    		   		android:textSize="16dp"/>
+
+            </RelativeLayout>
+            
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</RelativeLayout>

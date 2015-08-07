@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/detail_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF" />
+
+    <com.example.ccrvlz.dcp.detail.AutoHListViewPager
+        android:id="@+id/detail_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_tabs"
+        tools:context=".MainActivity" />
+
+</RelativeLayout>

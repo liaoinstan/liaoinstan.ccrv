@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    tools:context=".PayWayActivity" >
+
+    <ImageView
+        android:id="@+id/img_payway_logo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/logo_weixin" />
+
+    <TextView
+        android:id="@+id/text_payway_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_payway_logo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/img_payway_logo"
+        android:textSize="16dp"
+        android:text="微信支付" />
+
+    <TextView
+        android:id="@+id/text_payway_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_payway_logo"
+        android:layout_alignLeft="@+id/text_payway_title"
+        android:layout_marginBottom="2dp"
+        android:textSize="12dp"
+        android:textColor="#777777"
+        android:text="微信安全支付" />
+
+    <ImageView
+        android:id="@+id/img_item_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/icon_item_next" />
+
+</RelativeLayout>

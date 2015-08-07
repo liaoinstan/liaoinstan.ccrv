@@ -1,0 +1,41 @@
+<html>   
+    <head>   
+    <title>Page Title</title>   
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+  
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />  
+    <script src="js/jquery.js"></script>  
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>  
+    
+    <script type="text/javascript">  
+	    function showAndroidToast(toast)   
+	    {          
+	        JavaApp.showToast(toast);   
+	    }  
+	    function ret(dom){  
+		    var date = $(dom).val();
+		    JavaApp.ret(date);
+	    }     
+    </script> 
+</head>   
+<body>   
+  
+<div data-role="page">  
+  
+    <div data-role="header">  
+        <h1>Page Title</h1>  
+    </div><!-- /header -->  
+  
+    <div data-role="content">   
+        <button value="2015/7/17" onclick="ret(this)" data-theme="e">Say Hello 2015/7/17</button>  
+        <button value="2015/8/18" onclick="ret(this)" data-theme="e">Say Hello 2015/8/18</button>        
+    </div><!-- /content -->  
+  
+    <div data-role="footer">  
+        <h4>Page Footer</h4>  
+    </div><!-- /footer -->  
+</div><!-- /page -->  
+  
+</body>  
+</html>  

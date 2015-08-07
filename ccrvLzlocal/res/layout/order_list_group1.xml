@@ -1,0 +1,403 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OrderActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFFFFF" >
+
+        <ImageView
+            android:id="@+id/img_order_goods_pic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_dcp_addser_defpic" />
+
+        <TextView
+            android:id="@+id/text_order_goods_name"
+            style="@style/text_order_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_order_goods_pic"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_order_goods_pic"
+            android:text="商品名称" />
+
+        <TextView
+            android:id="@+id/text_order_goods_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"
+            android:text="2343.00"
+            android:textColor="@color/cc_orage" />
+
+        <TextView
+            android:id="@+id/textn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_order_goods_price"
+            android:layout_toLeftOf="@+id/text_order_goods_price"
+            android:text="￥"
+            android:textColor="@color/cc_orage" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="出行日期" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_order_calen"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/hot_lay_item" >
+
+        <TextView
+            android:id="@+id/text_order_calen_startdate"
+            style="@style/text_order_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="2015年8月31日" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_item_next" />
+
+        <TextView
+            android:id="@+id/text_order_calen_select"
+            style="@style/text_order_content_orage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/imageView3"
+            android:text="请选择" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="出行人数" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_order_person"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/hot_lay_item" >
+
+        <TextView
+            android:id="@+id/text_order_person_text"
+            style="@style/text_order_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="成人/儿童（12周岁以下）" />
+
+        <ImageView
+            android:id="@+id/img_order_person_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_item_next" />
+
+        <TextView
+            android:id="@+id/text_order_person_select"
+            style="@style/text_order_content_orage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/img_order_person_next"
+            android:text="请选择" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_order_addser"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/hot_lay_item" >
+
+        <TextView
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="增值服务" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_item_next" />
+
+        <TextView
+            style="@style/text_order_content_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/imageView4"
+            android:text="批量选择" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <com.example.ccrvlz.dcp.detail.AutoHListView
+        android:id="@+id/list_order_addser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF" >
+    </com.example.ccrvlz.dcp.detail.AutoHListView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="联系人" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <com.example.ccrvlz.dcp.detail.AutoHListView
+        android:id="@+id/list_order_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF" >
+    </com.example.ccrvlz.dcp.detail.AutoHListView>
+
+    <RelativeLayout
+        android:id="@+id/lay_order_contact_add"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/hot_lay_item" >
+
+        <TextView
+            android:id="@+id/text_order_contact_hint"
+            style="@style/text_order_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="点击添加联系人信息"
+            android:textColor="#CCCCCC" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/icon_order_addpeople" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="旅客信息" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <com.example.ccrvlz.dcp.detail.AutoHListView
+        android:id="@+id/list_order_traveller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF" >
+    </com.example.ccrvlz.dcp.detail.AutoHListView>
+
+    <RelativeLayout
+        android:id="@+id/lay_order_traveller_add"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/hot_lay_item" >
+
+        <TextView
+            android:id="@+id/text_order_traveller_hint"
+            style="@style/text_order_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="点击添加旅客信息"
+            android:textColor="#CCCCCC" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/icon_order_addpeople" />
+    </RelativeLayout>
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="留言" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lay_order_note_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hot_lay_item"
+        android:paddingBottom="14dp"
+        android:paddingTop="14dp" >
+
+        <TextView
+            android:id="@+id/text_order_note"
+            style="@style/text_order_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/icon_order_edit"
+            android:text="如有特殊需求，请留言"
+            android:textColor="#CCCCCC" />
+
+        <ImageView
+            android:id="@+id/icon_order_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_order_note"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/icon_order_edit" />
+
+    </RelativeLayout>
+
+</LinearLayout>

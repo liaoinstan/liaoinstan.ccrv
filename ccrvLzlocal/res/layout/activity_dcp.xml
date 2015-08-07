@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bk_head" >
+
+            <ImageView
+                android:id="@+id/img_action_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="5dp"
+                android:src="@drawable/hot_icon_back" />
+
+            <TextView
+                android:id="@+id/text_head_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="0.5"
+                android:text="旅游线路产品列表"
+                android:textSize="18dp"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#FFFFFF" >
+            
+            <com.astuetz.PagerSlidingTabStrip
+		        android:id="@+id/tabs"
+		        android:layout_width="wrap_content"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1"
+		        android:background="#FFFFFF" >
+            </com.astuetz.PagerSlidingTabStrip>
+            
+            <RelativeLayout
+                android:id="@+id/lay_action_more"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/hot_lay_item" >
+
+                <ImageView
+                    android:id="@+id/img_action_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_more" />
+            </RelativeLayout>
+            
+        </LinearLayout>
+        
+        
+
+	    <android.support.v4.view.ViewPager
+	        android:id="@+id/pager"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/colors"
+	        android:layout_below="@+id/tabs"
+	        tools:context=".MainActivity" />
+
+    </LinearLayout>
+
+</RelativeLayout>

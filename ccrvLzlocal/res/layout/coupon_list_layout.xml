@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+		ptr:ptrAnimationStyle="flip"
+       	ptr:ptrMode="both"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@drawable/scroll2"  >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.example.ccrvlz.dcp.detail.AutoHListView
+                android:id="@+id/coupon_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:listSelector="@android:color/transparent"
+                android:background="#FFFFFF" >
+            </com.example.ccrvlz.dcp.detail.AutoHListView>
+
+            <RelativeLayout
+                android:id="@+id/act_next"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:background="@drawable/hot_lay_act_next" >
+
+                <TextView
+                    android:id="@+id/text_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="确定" 
+                    android:textColor="#FFFFFF"
+    		   		android:textSize="16dp"/>
+
+            </RelativeLayout>
+            
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>

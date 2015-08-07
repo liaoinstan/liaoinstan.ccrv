@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".TravellerActivity" >
+    
+    <RelativeLayout
+        android:id="@+id/lay_traveller_head"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text_traveller_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="第一位旅客"
+            android:textSize="15sp"
+            android:textColor="#555555" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="姓名" />
+
+        <EditText
+            android:id="@+id/edit_traveller_name"
+            style="@style/edit_hidden"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/imageView2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="85dp"
+            android:ems="10"
+            android:hint="用于购买旅游意外险"
+            android:singleLine="true" 
+            android:inputType="textPersonName">
+
+        </EditText>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/line" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            style="@style/text_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="身份证号" />
+
+        <EditText
+            android:id="@+id/edit_traveller_idcard"
+            style="@style/edit_hidden"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="85dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="请准确填写"
+            android:singleLine="true"
+            android:inputType="textPersonName" >
+        </EditText>
+    </RelativeLayout>
+
+</LinearLayout>

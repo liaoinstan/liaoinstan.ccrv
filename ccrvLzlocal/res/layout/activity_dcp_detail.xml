@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    tools:context=".DcpDetailActivity" >
+
+    <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bk_head" >
+
+            <ImageView
+                android:id="@+id/img_action_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="5dp"
+                android:src="@drawable/hot_icon_back" />
+
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="0.5"
+                android:text="商品详情"
+                android:textSize="18dp"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+    	<com.handmark.pulltorefresh.library.PullToRefreshScrollView
+			xmlns:ptr="http://schemas.android.com/apk/res-auto"
+			ptr:ptrAnimationStyle="flip"
+        	ptr:ptrMode="both"
+    	    android:id="@+id/scrollView1"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="0dp"
+    	    android:layout_weight="8"
+    	    android:layout_above="@+id/act_next"
+    	    android:layout_below="@+id/RelativeLayout1"
+    	    android:scrollbarThumbVertical="@drawable/scroll2" >
+
+	        <LinearLayout
+	           android:layout_width="match_parent"
+	           android:layout_height="0dp"
+	           android:orientation="vertical"
+	           android:layout_weight="1" >
+	
+			   <include layout="@layout/activity_dcp_detail_group1"/>
+			   
+			   <include layout="@layout/activity_dcp_detail_group2"/>
+			   
+			   <include layout="@layout/activity_dcp_detail_group3"/>
+			   
+            </LinearLayout>
+            
+            
+		</com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+    
+    	<RelativeLayout
+    	    android:id="@+id/act_next"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="50dp"
+    	    android:layout_alignParentBottom="true"
+    	    android:layout_alignParentLeft="true"
+    	    android:layout_alignParentRight="true"
+    	    android:background="@drawable/hot_lay_act_next" >
+
+    		<TextView
+    		    android:id="@+id/text_dcp_detail_tc_title"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_centerHorizontal="true"
+    		    android:layout_centerVertical="true"
+    		    android:paddingTop="2dp"
+    		    android:paddingLeft="7dp"
+    		    android:text="预定行程"
+    		    android:textColor="#FFFFFF"
+    		    android:textSize="18dp" />
+
+    		<ImageView
+    		    android:id="@+id/img_action_more"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_centerVertical="true"
+    		    android:layout_toLeftOf="@+id/text_dcp_detail_tc_title"
+    		    android:src="@drawable/icon_dcp_edit" />
+
+    	</RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    tools:context=".CouponActivity" >
+
+    <ImageView
+        android:id="@+id/img_coupon_check"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:visibility="gone"
+        android:src="@drawable/icon_coupon_uncheck" />
+
+    <TextView
+        android:id="@+id/text_coupon_tf"
+        style="@style/text_coupon_price_n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_coupon_price"
+        android:layout_alignBottom="@+id/text_coupon_price"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:text="￥" />
+
+    <TextView
+        android:id="@+id/text_coupon_price"
+        style="@style/text_coupon_price_n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/text_coupon_tf"
+        android:text="30"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/text_coupon_starttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/text_coupon_price"
+        android:layout_alignLeft="@+id/text_coupon_limit"
+        android:layout_marginBottom="7dp"
+        android:textColor="#666666"
+        android:textSize="11dp"
+        android:text="2015/6/18" />
+
+    <TextView
+        android:id="@+id/text_order_calen_startdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/text_coupon_starttime"
+        android:layout_toRightOf="@+id/text_coupon_starttime"
+        android:textColor="#666666"
+        android:textSize="11dp"
+        android:text="至" />
+
+    <TextView
+        android:id="@+id/text_coupon_endtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_order_calen_startdate"
+        android:layout_alignBottom="@+id/text_order_calen_startdate"
+        android:layout_toRightOf="@+id/text_order_calen_startdate"
+        android:textColor="#666666"
+        android:textSize="11dp"
+        android:text="2015/8/18" />
+
+    <TextView
+        android:id="@+id/text_coupon_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/text_coupon_price"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="7dp"
+        android:text="满168可用"
+        android:textColor="#666666"
+        android:textSize="14dp" />
+
+</RelativeLayout>

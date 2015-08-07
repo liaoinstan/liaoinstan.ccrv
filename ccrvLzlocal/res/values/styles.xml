@@ -1,0 +1,97 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="MsgDialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@drawable/dialog_window_bk</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    <style name="LoadingDialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@drawable/dialog_window_bk</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="text_btn_n">
+	    <item name="android:gravity">center</item>
+	    <item name="android:textSize">12dp</item>
+	    <item name="android:textColor">#777777</item>
+	    <item name="android:background">@drawable/icon_btn_n</item>
+ 	</style>
+    <style name="text_btn_y">
+	    <item name="android:gravity">center</item>
+	    <item name="android:textSize">12dp</item>
+	    <item name="android:textColor">#f87b5c</item>
+	    <item name="android:background">@drawable/icon_btn_y</item>
+ 	</style>
+ 	
+    <style name="text_btn_re">
+	    <item name="android:gravity">center</item>
+	    <item name="android:textSize">12dp</item>
+	    <item name="android:textColor">#777777</item>
+	    <item name="android:background">@drawable/icon_btn_re</item>
+ 	</style>
+ 	
+    <style name="text_coupon_price_y1">
+	    <item name="android:textColor">#fad178</item>
+ 	</style>
+ 	<style name="text_coupon_price_y2">
+	    <item name="android:textColor">#66ccee</item>
+ 	</style>
+ 	<style name="text_coupon_price_n">
+	    <item name="android:textColor">#999999</item>
+ 	</style>
+ 	
+ 	<style name="text_edittext">
+	    <item name="android:textColor">#828fab</item>
+	    <item name="android:textSize">15dp</item>
+ 	</style>
+ 	<style name="edit_hidden">
+	    <item name="android:background">#00000000</item>
+	    <item name="android:textColorHint">#CCCCCC</item>
+	    <item name="android:textColor">#555555</item>
+	    <item name="android:textSize">14dp</item>
+ 	</style>
+ 	
+ 	<style name="text_order_content">
+	    <item name="android:textColor">@color/cc_dark</item>
+	    <item name="android:textSize">13dp</item>
+ 	</style>
+ 	<style name="text_order_content_light">
+	    <item name="android:textColor">@color/cc_lightdark</item>
+	    <item name="android:textSize">13dp</item>
+ 	</style>
+ 	<style name="text_order_content_orage">
+	    <item name="android:textColor">@color/cc_orage</item>
+	    <item name="android:textSize">13dp</item>
+ 	</style>
+ 	<style name="text_times_week">
+	    <item name="android:textColor">#777777</item>
+	    <item name="android:textSize">14sp</item>
+	    <item name="android:layout_weight">1</item>
+	    <item name="android:gravity">center</item>
+	    <item name="android:layout_width">wrap_content</item>
+	    <item name="android:layout_height">match_parent</item>
+	    <item name="android:textStyle">bold</item>
+ 	</style>
+</resources>
