@@ -26,5 +26,6 @@
     <string name="title_activity_times_square">TimesSquareActivity</string>
     <string name="title_activity_city">CityActivity</string>
     <string name="title_activity_note">NoteActivity</string>
+    <string name="title_activity_start_up">StartUpActivity</string>
 
 </resources>
